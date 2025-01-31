@@ -10,12 +10,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
-
-import com.utilities.TestUtil;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+import com.utilities.TestUtil;
+
 public class TestBase {
-    
+
     public static WebDriver driver;
     public static Properties prop;
 
@@ -23,8 +23,8 @@ public class TestBase {
     public TestBase() {
         try {
             prop = new Properties();
-            FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + 
-                "\\src\\test\\resources\\config\\com.config.properties");
+            FileInputStream ip = new FileInputStream(
+                    System.getProperty("user.dir") + "\\src\\test\\resources\\config\\com.config.properties");
             prop.load(ip);
         } catch (IOException e) {
             e.printStackTrace();
@@ -40,30 +40,20 @@ public class TestBase {
 
         String browserName = prop.getProperty("browser");
 
-        if (browserName == null) {
-            throw new RuntimeException("Browser name is not defined in properties file.");
+        if (browserName.equalsIgnoreCase("Chrome")) {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        } else if (browserName.equalsIgnoreCase("Firefox")) {
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
+        } else if (browserName.equalsIgnoreCase("Edge")) {
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
+        } else {
+            throw new RuntimeException("Invalid browser specified in properties file.");
         }
 
-        switch (browserName.toLowerCase()) {
-            case "chrome":
-                WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
-                break;
-
-            case "firefox":
-                WebDriverManager.firefoxdriver().setup();
-                driver = new FirefoxDriver();
-                break;
-
-            case "edge":
-                WebDriverManager.edgedriver().setup();
-                driver = new EdgeDriver();
-                break;
-
-            default:
-                throw new RuntimeException("Invalid browser name in properties file: " + browserName);
-        }
-
+        // Browser Settings
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(TestUtil.PAGE_LOAD_TIMEOUT));

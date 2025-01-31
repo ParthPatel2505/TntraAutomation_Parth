@@ -5,6 +5,10 @@
 	<groupId>com.sta</groupId>
 	<artifactId>TntraAutomation_Parth</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<properties>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+</properties>
 	<dependencies>
 
 		<!--
@@ -56,11 +60,23 @@
 			<artifactId>webdrivermanager</artifactId>
 			<version>5.4.0</version> <!-- Update to the latest version -->
 		</dependency>
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>2.0.9</version>
+    </dependency>
+     <dependency>
+        <groupId>com.github.javafaker</groupId>
+        <artifactId>javafaker</artifactId>
+        <version>1.0.2</version>
+    </dependency>
 
-		<dependency>
-			<groupId>TntraFramework</groupId>
-			<artifactId>TntraFramework</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+<dependency>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-compiler-plugin</artifactId>
+  <version>3.11.0</version>
+  <type>maven-plugin</type>
+</dependency>
+		
 	</dependencies>
 </project>
