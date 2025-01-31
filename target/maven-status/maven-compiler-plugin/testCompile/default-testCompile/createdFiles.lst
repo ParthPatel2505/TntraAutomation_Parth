@@ -1,0 +1,11 @@
+com\pageobjects\Registerpage.class
+com\testcases\AddtocartTest.class
+com\testcases\CheckoutprocessTest.class
+com\utilities\TestUtil.class
+com\pageobjects\Addtocart.class
+com\testcases\LoginpageTest.class
+com\pageobjects\Checkoutprocess.class
+com\base\TestBase.class
+com\testcases\TestRunner.class
+com\testcases\RegisterAccountTest.class
+com\pageobjects\Loginpage.class
