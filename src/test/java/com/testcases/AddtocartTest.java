@@ -1,5 +1,6 @@
 package com.testcases;
 
+import java.awt.AWTException;
 import java.io.IOException;
 
 import org.testng.annotations.BeforeClass;
@@ -33,6 +34,12 @@ public class AddtocartTest extends TestBase {
 	public void verify_addtocart_product2() throws InterruptedException {
 		
 		addtocart.addtocartproduct2();
+	}
+	
+	@Test(priority = 3)
+	public void verify_addtocart_product4() throws InterruptedException, AWTException {
+		
+		addtocart.addtocartproduct4();
 	}
 	
 	

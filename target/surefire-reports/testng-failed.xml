@@ -10,14 +10,6 @@
           <include name="setup"/>
         </methods>
       </class> <!-- com.testcases.LoginpageTest -->
-      <class name="com.testcases.RegisterAccountTest">
-        <methods>
-          <include name="browserclose"/>
-          <include name="Verify_DuplicateEmailaddress"/>
-          <include name="Verify_Registration"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.testcases.RegisterAccountTest -->
       <class name="com.testcases.AddtocartTest">
         <methods>
           <include name="browserclose"/>
@@ -26,6 +18,14 @@
           <include name="verify_addtocart_product1"/>
         </methods>
       </class> <!-- com.testcases.AddtocartTest -->
+      <class name="com.testcases.RegisterAccountTest">
+        <methods>
+          <include name="browserclose"/>
+          <include name="Verify_DuplicateEmailaddress"/>
+          <include name="Verify_Registration"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.testcases.RegisterAccountTest -->
       <class name="com.testcases.CheckoutprocessTest">
         <methods>
           <include name="browserclose"/>

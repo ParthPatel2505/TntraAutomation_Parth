@@ -3,14 +3,27 @@
 <suite name="Failed suite [Command line suite]">
   <test thread-count="5" name="Command line test(failed)">
     <classes>
+      <class name="com.testcases.LoginpageTest">
+        <methods>
+          <include name="browserclose"/>
+          <include name="Verify_login_functionality"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.testcases.LoginpageTest -->
       <class name="com.testcases.RegisterAccountTest">
         <methods>
           <include name="browserclose"/>
           <include name="Verify_DuplicateEmailaddress"/>
-          <include name="Verify_Registration"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.testcases.RegisterAccountTest -->
+      <class name="com.testcases.CheckoutprocessTest">
+        <methods>
+          <include name="browserclose"/>
+          <include name="verify_CheckoutProcess"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.testcases.CheckoutprocessTest -->
       <class name="com.testcases.AddtocartTest">
         <methods>
           <include name="browserclose"/>
@@ -19,20 +32,6 @@
           <include name="verify_addtocart_product1"/>
         </methods>
       </class> <!-- com.testcases.AddtocartTest -->
-      <class name="com.testcases.CheckoutprocessTest">
-        <methods>
-          <include name="browserclose"/>
-          <include name="verify_CheckoutProcess"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.testcases.CheckoutprocessTest -->
-      <class name="com.testcases.LoginpageTest">
-        <methods>
-          <include name="browserclose"/>
-          <include name="Verify_login_functionality"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.testcases.LoginpageTest -->
     </classes>
   </test> <!-- Command line test(failed) -->
 </suite> <!-- Failed suite [Command line suite] -->
